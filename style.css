@@ -1,0 +1,588 @@
+@charset "utf-8";
+
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 5%;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#about,
+#works,
+#flow,
+#info,
+#question {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+.about__box,
+.works__box,
+.flow__box {
+  text-align: center;
+}
+
+
+/* 共通終わり-------- */
+
+/* Loading背景画面設定　*/
+#splash {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: #fff;
+}
+
+#splash_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#splash_logo img {
+  width: 300px;
+}
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* header-------- */
+#header {
+  height: 100px;
+}
+
+.logo__top img {
+  width: auto;
+  height: 100px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.logo__info {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #4C5270;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.logo__info-img {
+  position: fixed;
+  top: 27.5px;
+  right: 27.5px;
+  width: 25px;
+}
+/* /header-------- */
+
+/* nav-------- */
+#g-nav {
+  position: fixed;
+  z-index: 99;
+  top: -120%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.6s;
+}
+
+#g-nav.panelactive {
+  top: 0;
+}
+
+#g-nav ul {
+  position: absolute;
+  z-index: 99;
+  top: 30%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+#g-nav li a {
+  color: #4C5270;
+  padding: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  border-bottom: 2px solid #4C5270;
+}
+
+#g-nav li a:hover {
+  color: #fff;
+  background-color: #4C5270;
+  transition:  0.8s;
+}
+
+.open_btn {
+  position: fixed;
+  background: #4C5270;
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  z-index: 100;
+  border: 1px solid #000;
+}
+
+.open_btn span {
+  display: inline-block;
+  transition: all .5s;
+  position: absolute;
+  left: 14px;
+  height: 2px;
+  border-radius: 5px;
+  background: #fff;
+  width: 45%;
+}
+
+.open_btn span:nth-of-type(1) {
+  top: 11px;
+}
+
+.open_btn span:nth-of-type(2) {
+  top: 17px;
+}
+
+.open_btn span:nth-of-type(3) {
+  top: 23px;
+}
+
+.open_btn span:nth-of-type(3)::after {
+  content: "Menu";
+  position: absolute;
+  top: 7px;
+  left: -2px;
+  color: #fff;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.open_btn.active span:nth-of-type(1) {
+  top: 12px;
+  left: 16px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.open_btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.open_btn.active span:nth-of-type(3) {
+  top: 24px;
+  left: 16px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+.open_btn.active span:nth-of-type(3)::after {
+  content: "Close";
+  transform: translateY(0) rotate(-45deg);
+  top: 5px;
+  left: 3px;
+}
+/* /nav-------- */
+
+/* fv-------- */
+.firstview img {
+  width: 80%;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+/* スライダー  */
+.slider {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slider img {
+  width: 65vw;
+}
+
+.slider .slick-slide {
+  transform: scale(0.6);
+  transition: all .7s;
+  opacity: 0.5;
+}
+
+.slider .slick-slide.slick-center {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 42%;
+  cursor: pointer;
+  border-top: 2px solid #888;
+  border-right: 2px solid #888;
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+.slick-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 8px;
+  height: 8px;
+  display: block;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.slick-dots .slick-active button {
+  background: #333;
+}
+
+/* /fv-------- */
+
+/* about-------- */
+.about__box p {
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+.about__box img {
+  max-width: 60%;
+  margin: 20px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .about__box {
+    text-align: left;
+  }
+
+  .about__box__text-image {
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+/* /about-------- */
+
+/* works-------- */
+#works {
+  color: #fff;
+  background-color: #4C5270;
+}
+
+.works__box {
+  padding-top: 20px;
+}
+
+.works__box-img {
+  margin: 0 auto;
+  padding: 15px 30px;
+  max-width: 800px;
+}
+.works__box-contents img {
+  border-radius: 30px;
+}
+
+.works__box h3 {
+  padding: 0 0 20px;
+}
+
+.works__box h4 {
+  padding: 15px 0;
+}
+
+/* /works-------- */
+
+/* flow------------ */
+.flow__box-step {
+  text-align: center;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.flow__box-step .step {
+  padding: 20px 0 0;
+  font-size: 32px;
+}
+
+.flow__box-step .number {
+  font-size: 40px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.flow__box-step .text {
+  line-height: 1.5rem;
+}
+
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flow__box-step {
+    padding: 20px 100px;
+  }
+}
+
+/* /flow------------ */
+
+/* question_------------ */
+#question {
+  padding: 30px 0;
+}
+
+.question__title {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.border {
+  border: 1px solid #4C5270;
+}
+
+/* アコーディオン*/
+.accordion-area {
+  list-style: none;
+  width: 96%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+.accordion-area li {
+  margin: 10px 0;
+}
+
+.accordion-area section {
+  border: 1px solid #ccc;
+}
+
+.title {
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .3s ease;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+
+}
+
+.title::before {
+  top: 48%;
+  left: 20px;
+  transform: rotate(0deg);
+
+}
+
+.title::after {
+  top: 48%;
+  left: 20px;
+  transform: rotate(90deg);
+
+}
+
+.title.close::before {
+  transform: rotate(45deg);
+}
+
+.title.close::after {
+  transform: rotate(-45deg);
+}
+
+.box {
+  display: none;
+  background: #f3f3f3;
+  margin: 0 5% 3%;
+  padding: 3%;
+}
+
+/* /question_------------ */
+
+/* contact------------ */
+#contact {
+  color: #fff;
+  background-color: #4C5270;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.contact__box-text {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact__box-text p {
+  font-size: 16px;
+  line-height: 2rem;
+}
+
+.contact__btn {
+  padding: 30px 0 40px;
+  text-align: center;
+}
+
+.contact__btn a {
+  display: inline-block;
+  max-width: 250px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: black;
+  color: #fff;
+  font-weight: bold;
+}
+
+.contact__btn a:hover {
+  top: -3px;
+  box-shadow: 0 3px 5px #fff;
+}
+
+.contact__btn a:active {
+  box-shadow: 0 0 0;
+  transform: translateY(4px);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #69696a;
+}
+
+#name,
+#email {
+  width: 100%;
+  padding: 15px 10px;
+  margin: 15px 5px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#message {
+  width: 100%;
+  height: 200px;
+  padding: 15px 10px;
+  margin: 15px 5px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+/* /contact------------ */
+
+/* info------------ */
+.info__box dl {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info__box dl dt,
+dd {
+  padding: 30px 0;
+  display: inline-block;
+  border-bottom: 1px solid lightgray;
+  font-weight: normal;
+}
+
+.info__box dl dt {
+  width: 30%;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.info__box dl dd {
+  width: 70%;
+}
+/* /info------------ */
+
+
+/* footer------------ */
+#footer {
+  text-align: center;
+  padding: 20px 0;
+}
+/* /footer------------ */
